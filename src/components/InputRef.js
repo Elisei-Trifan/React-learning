@@ -4,8 +4,7 @@ const InputRef = () => {
   const inputRef = React.useRef()
 
   function handleButtClick() {
-    console.dir(inputRef.current)
-    inputRef.current.blur()
+    inputRef.current.focus()
   }
 
   return (

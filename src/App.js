@@ -5,6 +5,8 @@ import Form from './components/Form'
 import ThemedComponent from './components/ThemedComponent'
 import ThemeProvider from './components/ThemeProvider'
 import InputRef from './components/InputRef'
+import Counter from './components/Counter'
+import Timer from './components/Timer'
 
 function App() {
   const [count, setCount] = React.useState(0)
@@ -40,6 +42,8 @@ function App() {
         <ThemedComponent />
       </ThemeProvider>
       <InputRef />
+      <Counter />
+      <Timer />
     </div>
   )
 }
