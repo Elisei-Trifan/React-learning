@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import './App.css'
+import Button from './components/Button'
+import Form from './components/Form'
 
 function App() {
+  const [count, setCount] = React.useState(0)
+  const [text, setText] = React.useState('Привет')
+  const [visible, setVisible] = React.useState(true)
+
+  function handleClick(e) {
+    e.preventDefault()
+    setCount(count + 1)
+    setText(`Кнопка нажата ${count + 1}  раз`)
+  }
+
+  function showText() {
+    setVisible(!visible)
+  }
+
+  const arr = [1, 2, 3, 4, 5]
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Button count={count} handleClick={handleClick} />
+      <Button count={count} handleClick={handleClick} />
+      <p>{text} </p>
+      <button onClick={showText}> {visible ? 'Скрыть' : 'Показать'}</button>
+      {visible && <p>Скрываемый и показываемый текст</p>}
+      {arr.map((item) => (
+        <li className="list" key={item}>
+          {item}
+        </li>
+      ))}
+      {/* <Form /> */}
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
