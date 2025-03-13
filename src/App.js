@@ -2,6 +2,8 @@ import React from 'react'
 import './App.css'
 import Button from './components/Button'
 import Form from './components/Form'
+import ThemedComponent from './components/ThemedComponent'
+import ThemeProvider from './components/ThemeProvider'
 
 function App() {
   const [count, setCount] = React.useState(0)
@@ -22,7 +24,7 @@ function App() {
 
   return (
     <div className="App">
-      <Button count={count} handleClick={handleClick} />
+      {/* <Button count={count} handleClick={handleClick} />
       <Button count={count} handleClick={handleClick} />
       <p>{text} </p>
       <button onClick={showText}> {visible ? 'Скрыть' : 'Показать'}</button>
@@ -32,7 +34,10 @@ function App() {
           {item}
         </li>
       ))}
-      {/* <Form /> */}
+      <Form /> */}
+      <ThemeProvider>
+        <ThemedComponent />
+      </ThemeProvider>
     </div>
   )
 }
