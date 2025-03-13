@@ -7,11 +7,13 @@ import ThemeProvider from './components/ThemeProvider'
 import InputRef from './components/InputRef'
 import Counter from './components/Counter'
 import Timer from './components/Timer'
+import ModalPortal from './components/ModalPortal'
 
 function App() {
   const [count, setCount] = React.useState(0)
   const [text, setText] = React.useState('Привет')
   const [visible, setVisible] = React.useState(true)
+  const [modalOpen, setModalOpen] = React.useState(false)
 
   function handleClick(e) {
     e.preventDefault()
@@ -44,6 +46,12 @@ function App() {
       <InputRef />
       <Counter />
       <Timer />
+      <div>
+        <button onClick={() => setModalOpen(true)}>
+          Открыть модальное окно
+        </button>
+        <ModalPortal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
+      </div>
     </div>
   )
 }
