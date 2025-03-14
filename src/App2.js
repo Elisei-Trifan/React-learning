@@ -32,6 +32,7 @@ const App2 = () => {
         <button className="" onClick={addTodo}>
           Добавить задачу
         </button>
+        <button onClick={() => setTodos([])}>Удалить все задачи</button>
       </label>
 
       <ul>
@@ -39,7 +40,7 @@ const App2 = () => {
           <li key={item.id}>
             <input type="checkbox" />
             <span> {item.text} </span>
-            <span> &times; </span>
+            <span className="delete"> &times; </span>
           </li>
         ))}
       </ul>
