@@ -12,14 +12,32 @@ const todoSlice = createSlice({
     addTodo(state, action) {
       state.todos.push({
         id: new Date().toISOString(),
-        text: action.payload.text,
+        text: state.text,
         completed: false,
       })
+      state.text = ''
     },
-    removeTodo() {},
-    toggleTodoCompleted() {},
+    removeTodo(state, action) {
+      state.todos = state.todos.filter((item) => item.id !== action.payload.id)
+    },
+    toggleTodoCompleted(state, action) {
+      state.todos = state.todos.map((item) => {
+        if (item.id !== action.payload.id) return item
+        return {
+          ...item,
+          completed: !item.completed,
+        }
+      })
+    },
+    clearTodos(state, action) {
+      state.todos = []
+    },
+    setText(state, action) {
+      state.text = action.payload
+    },
   },
 })
 
-export const { addTodo, removeTodo, toggleTodoCompleted } = todoSlice.actions
+export const { addTodo, removeTodo, toggleTodoCompleted, clearTodos, setText } =
+  todoSlice.actions
 export default todoSlice.reducer
