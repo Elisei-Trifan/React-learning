@@ -1,13 +1,11 @@
 import React from 'react'
 import './App2.css'
-import TodoList from './components/Todo/TodoList'
-import InputField from './components/Todo/InputField'
+import TodoRoot from './components/Todo/TodoRoot'
 
 const App2 = () => {
   return (
     <div className="App2">
-      <InputField />
-      <TodoList />
+      <TodoRoot />
     </div>
   )
 }

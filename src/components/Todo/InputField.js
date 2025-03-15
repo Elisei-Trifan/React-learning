@@ -12,19 +12,22 @@ const InputField = () => {
   const text = useSelector((state) => state.todos.text)
 
   return (
-    <label>
-      <input
-        type="text"
-        value={text}
-        onChange={(e) => {
-          dispatch(setText(e.target.value))
-        }}
-      ></input>
-      <button className="" onClick={() => dispatch(addTodo())}>
-        Добавить задачу
-      </button>
-      <button onClick={() => setTodos([])}>Удалить все задачи</button>
-    </label>
+    <div>
+      <h1> Todo List</h1>
+      <label>
+        <input
+          type="text"
+          value={text}
+          onChange={(e) => {
+            dispatch(setText(e.target.value))
+          }}
+        ></input>
+        <button className="" onClick={() => dispatch(addTodo())}>
+          Добавить задачу
+        </button>
+        <button onClick={() => setTodos([])}>Удалить все задачи</button>
+      </label>
+    </div>
   )
 }
 
