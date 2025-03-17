@@ -1,5 +1,6 @@
 .App2 {
   text-align: center;
+  height: 100vh;
 }
 
 .btn {
@@ -28,6 +29,13 @@ input:checked + span {
   text-decoration: line-through;
 }
 
+.container {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .header {
   background-color: rgba(13, 13, 13, 0.7);
   display: flex;
@@ -46,4 +54,13 @@ input:checked + span {
   font-size: 12px;
   padding: 0 10px;
   color: rgb(0, 255, 34);
+}
+
+.pend {
+  color: red;
+}
+
+.footer {
+  font-size: 8px;
+  padding-bottom: 10px;
 }
