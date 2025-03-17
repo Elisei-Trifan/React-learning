@@ -8,12 +8,13 @@ const Counter = () => {
 
   return (
     <div>
-      <p>Кнопка нажата: {renderCount.current} раз</p>
+      <p>Кнопка нажата: {count} раз</p>
       <p>Компонент ререндерился: {renderCount.current} раз</p>
       <button
         onClick={() => {
           renderCount.current += 1
           console.log(renderCount.current)
+          setCount(count + 1)
         }}
       >
         Увеличить
