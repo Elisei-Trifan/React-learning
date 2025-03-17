@@ -10,6 +10,7 @@ const todoSlice = createSlice({
   initialState,
   reducers: {
     addTodo(state, action) {
+      if (state.text.trim() === '') return
       state.todos.push({
         id: new Date().toISOString(),
         text: state.text,

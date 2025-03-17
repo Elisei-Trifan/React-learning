@@ -27,3 +27,22 @@ li {
 input:checked + span {
   text-decoration: line-through;
 }
+
+.header {
+  background-color: rgba(13, 13, 13, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+}
+.link {
+  font-size: 12px;
+  color: white;
+  text-decoration: none;
+  padding: 0 10px;
+}
+
+.active-link {
+  color: rgb(0, 255, 34);
+  text-decoration: double;
+}
