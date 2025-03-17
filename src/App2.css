@@ -43,6 +43,7 @@ input:checked + span {
 }
 
 .active-link {
+  font-size: 12px;
+  padding: 0 10px;
   color: rgb(0, 255, 34);
-  text-decoration: double;
 }

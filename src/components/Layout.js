@@ -2,7 +2,7 @@ import React from 'react'
 import { NavLink, Outlet } from 'react-router-dom'
 
 const Layout = () => {
-  const setActive = ({ isActive }) => `link ${isActive ? 'active-link' : ''}`
+  const setActive = ({ isActive }) => (isActive ? 'active-link' : 'link')
   return (
     <>
       <header className="header">
