@@ -1,12 +1,17 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Outlet } from 'react-router-dom'
 
 const Layout = () => {
   return (
-    <header>
-      <Link to="/"> Главная </Link>
-      <Link to="/"> Главная </Link>
-    </header>
+    <>
+      <header className="header">
+        <Link to="/"> Главная </Link>
+        <Link to="/counter"> Каунтер </Link>
+        <Link to="/inputRef"> Введите значение </Link>
+      </header>
+      <Outlet />
+      <footer> 2025 </footer>
+    </>
   )
 }
 
